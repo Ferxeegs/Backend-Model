@@ -1,13 +1,12 @@
 from model.model_loader import model
-import cv2
 import numpy as np
 from PIL import Image
 from io import BytesIO
 
 def predict_bp(image, score_threshold=0.5):
-    # Mengonversi image dari format file ke format yang bisa diterima model (numpy array)
-    img = Image.open(BytesIO(image.read()))
-    img = np.array(img)  # Convert to numpy array
+    # Mengonversi image dari format file (PIL) ke format numpy array yang diterima model
+    img = Image.open(image)  # Membuka gambar dari file input
+    img = np.array(img)  # Mengonversi gambar ke numpy array
 
     # Prediksi dengan model YOLO
     results = model(img)
