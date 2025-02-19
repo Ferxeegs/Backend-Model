@@ -3,7 +3,7 @@ import numpy as np
 from PIL import Image
 from io import BytesIO
 
-def predict_bp(image, score_threshold=0.5):
+def predict_bp(image, score_threshold=0.4):
     # Mengonversi image dari format file (PIL) ke format numpy array yang diterima model
     img = Image.open(image)  # Membuka gambar dari file input
     img = np.array(img)  # Mengonversi gambar ke numpy array
@@ -17,7 +17,7 @@ def predict_bp(image, score_threshold=0.5):
     classes = results[0].boxes.cls.cpu().numpy()  # Mengambil ID kelas
 
     # Definisikan daftar nama kelas (sesuaikan dengan kelas yang digunakan model Anda)
-    class_names = ["Ikan Leles", "Ikan Bawal", "Ikan Lele"]  # Contoh class names
+    class_names = ["Ikan Bawal", "Ikan Gurame", "Ikan Lele"]  # Contoh class names
 
     # Konversi hasil prediksi menjadi dict untuk memudahkan akses dan serialisasi ke JSON
     predictions_dict = []
