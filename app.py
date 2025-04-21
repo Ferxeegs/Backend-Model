@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from routes.predict import predict_bp
+from routes.predict import predict_image
 import logging
 
 # Setup logging untuk debugging
@@ -28,8 +28,7 @@ def predict():
 
     try:
         app.logger.info('Processing image with predict_bp...')  # Log sebelum memproses gambar
-        result = predict_bp(image)  # Mengirim gambar dalam format file ke fungsi predict_bp
-
+        result = predict_image(image)
         # Log hasil prediksi
         app.logger.info(f"Prediction result: {result}")
         
@@ -41,4 +40,4 @@ def predict():
         return jsonify({'success': False, 'message': f"Error processing image: {str(e)}"}), 500
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)

@@ -1,0 +1,7 @@
+Flask
+torch==2.1.0+cpu
+ultralytics
+numpy<2.0
+pillow
+opencv-python
+

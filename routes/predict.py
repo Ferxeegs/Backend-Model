@@ -3,7 +3,7 @@ import numpy as np
 from PIL import Image
 from io import BytesIO
 
-def predict_bp(image, score_threshold=0.4):
+def predict_image(image, score_threshold=0.4):
     # Mengonversi image dari format file (PIL) ke format numpy array yang diterima model
     img = Image.open(image)  # Membuka gambar dari file input
     img = np.array(img)  # Mengonversi gambar ke numpy array
