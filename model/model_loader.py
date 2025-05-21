@@ -2,7 +2,7 @@ import torch
 from ultralytics import YOLO
 
 # Path model (sesuaikan dengan lokasi modelmu)
-model_path = 'model/best.pt'
+model_path = 'model/speciesv4.pt'
 
 def load_model():
     # Load model menggunakan YOLO dari Ultralytics

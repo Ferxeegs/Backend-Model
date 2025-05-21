@@ -1,6 +1,6 @@
 from ultralytics import YOLO
 
-model_path = "model/best.pt"  # Sesuaikan path model kamu
+model_path = "model/speciesv4.pt"  # Sesuaikan path model kamu
 
 # Load model menggunakan Ultralytics API
 model = YOLO(model_path)

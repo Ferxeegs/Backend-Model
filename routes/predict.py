@@ -17,7 +17,7 @@ def predict_image(image, score_threshold=0.4):
     classes = results[0].boxes.cls.cpu().numpy()  # Mengambil ID kelas
 
     # Definisikan daftar nama kelas (sesuaikan dengan kelas yang digunakan model Anda)
-    class_names = ["Ikan Bawal", "Ikan Gurame", "Ikan Lele"]  # Contoh class names
+    class_names = ["Ikan Bawal", "Ikan Gurame", "Ikan Lele", "Ikan Nila", "Ikan Tuna"]  # Contoh class names
 
     # Konversi hasil prediksi menjadi dict untuk memudahkan akses dan serialisasi ke JSON
     predictions_dict = []
